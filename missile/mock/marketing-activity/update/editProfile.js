@@ -1,0 +1,53 @@
+module.exports = {
+  'success': true,
+  'error': null,
+  'data': [
+    {
+      'id': 17,
+      'userGroupName': '用户组1',
+      'activityId': 28,
+      'activityTheme': null,
+      'profileId': 33,
+      'profileName': '用户画像1',
+      'updateType': 1,
+      'percentage': 80,
+      'isDelete': 0,
+      'predictAmount': 220100,
+      'userAmount': 0,
+      'sysCode': '111222',
+      'sysName': '理财支付中心',
+      'bizName': null,
+      'createdBy': null,
+      'beginTime': null,
+      'endTime': null,
+      'updateProfileTime': 1509638400000,
+      'createdTime': 1509811200000,
+      'updatedTime': 1509897600000,
+      'profileUserGroupBaseInfoList': null
+    },
+    {
+      'id': 22,
+      'userGroupName': '用户组2',
+      'activityId': 28,
+      'activityTheme': null,
+      'profileId': 33,
+      'profileName': '用户画像1',
+      'updateType': 1,
+      'percentage': 20,
+      'isDelete': 0,
+      'predictAmount': 20100,
+      'userAmount': 0,
+      'sysCode': '111222',
+      'sysName': '理财支付中心',
+      'bizName': null,
+      'createdBy': null,
+      'beginTime': null,
+      'endTime': null,
+      'updateProfileTime': 1509638400000,
+      'createdTime': 1509897600000,
+      'updatedTime': 1509897600000,
+      'profileUserGroupBaseInfoList': null
+    }
+  ],
+  'code': 0
+}

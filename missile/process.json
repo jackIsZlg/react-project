@@ -1,0 +1,56 @@
+{
+  "apps": [
+    {
+      "name": "development",
+      "script": "./server/server.js",
+      "exec_mode": "fork",
+      "max_memory_restart": "500M",
+      "env": {
+        "NODE_ENV": "development",
+        "BLUEBIRD_WARNINGS": 0
+      }
+    },
+    {
+      "name": "dev-server",
+      "script": "./scripts/server.js",
+      "exec_mode": "fork",
+      "max_memory_restart": "500M",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "test",
+      "script": "./server/server.js",
+      "exec_mode": "fork",
+      "max_memory_restart": "500M",
+      "interpreter": "node",
+      "env": {
+        "NODE_ENV": "test",
+        "BLUEBIRD_WARNINGS": 0
+      }
+    },
+    {
+      "name": "staging",
+      "script": "./server/server.js",
+      "instances": "4",
+      "exec_mode": "cluster",
+      "max_memory_restart": "500M",
+      "env": {
+        "NODE_ENV": "staging",
+        "BLUEBIRD_WARNINGS": 0
+      }
+    },
+    {
+      "name": "production",
+      "script": "./server/server.js",
+      "instances": "4",
+      "exec_mode": "cluster",
+      "max_memory_restart": "1G",
+      "env": {
+        "NODE_ENV": "production",
+        "BLUEBIRD_WARNINGS": 0
+      }
+    }
+  ]
+}

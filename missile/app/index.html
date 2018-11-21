@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ pageTitle }}</title>
+  <link rel="icon" href="/favicon.ico?v=1" />
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/javascript">
+    window.__INITIAL_STATE__ = {{ initState | safe }}
+    window.__config__ = {{ config | safe }}
+  </script>
+</body>
+
+</html>
