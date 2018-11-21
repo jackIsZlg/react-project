@@ -1,0 +1,136 @@
+/*
+  全局提示窗
+ */
+@import "variable";
+
+// 上浮提示窗
+#df-toasts {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transition: all .3s;
+  transform: translateX(-50%);
+  z-index: 10001;
+  .df-alert {
+    display: flex;
+    width: 300px;
+    height: 70px;
+    margin-top: 20px;
+    padding: 8px;
+    background: rgba(0, 0, 0, .9);
+    border-radius: 1px;
+    animation: alertShow .3s ease-in-out forwards;
+    opacity: .3;
+    transform: translateY(50px);
+    .tip-img {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      margin-right: 10px;
+      border-radius: $borderRadius;
+      overflow: hidden;
+      .single-bg {
+        position: absolute;
+        @include position-0;
+        background-size: cover;
+        background-position: center;
+      }
+      @include fileCover(54px);
+      .file-cover div {
+        background-color: #323232;
+      }
+      .iconfont {
+        display: block;
+        position: absolute;
+        top: 11px;
+        left: 11px;
+        @include squareCenter(32px);
+        color: #fff;
+        font-size: 15px;
+        border-radius: $borderRadius;
+        z-index: 3;
+        &.success {
+          background: rgba(0, 0, 0, .9);
+        }
+        &.warning {
+          background: rgba(255, 85, 85, .9);
+        }
+      }
+    }
+    .tip-text {
+      flex: 1;
+      position: relative;
+      .tip-text-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 12px;
+        color: #FFFFFF;
+        &:first-child {
+          font-size: 14px;
+          font-weight: 600;
+          margin-top: 0;
+        }
+      }
+    }
+    &.show {
+      transition: all .3s;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &.close {
+      transition: all .4s;
+      transform-origin: 50% 30%;
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+}
+
+// confirm提示窗
+.df-confirm-mask {
+  @include popBg();
+  @include position-0;
+  background: rgba(30, 30, 30, .8);
+  z-index: 10001;
+  .df-confirm {
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF;
+    border-radius: $borderRadius;
+    overflow: hidden;
+  }
+  .cancel-pop {
+    @include closePop();
+  }
+  .df-confirm-header {
+    @include popHeader();
+  }
+  .df-confirm-content {
+    padding: 27px 20px;
+    font-size: 18px;
+    color: #777;
+    font-weight: $fontMedium;
+  }
+  .df-confirm-footer {
+    padding: 20px;
+    text-align: right;
+    button {
+      width: 70px;
+      height: 40px;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .btn-default {
+      border: 1px solid #E6E6E6;
+    }
+  }
+}

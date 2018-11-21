@@ -1,0 +1,205 @@
+@import "../../../common/variable";
+
+.gallery-channel {
+  display: none;
+  margin-top: 71px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.08);
+  text-align: center;
+  .water-fall-panel{
+    min-height: 300px
+  }
+  .gallery-channel-item {
+    position: relative;
+    display: inline-block;
+    width: 66px;
+    margin: 0 16px;
+    color: #777;
+    &.current {
+      color: #FAFAFA;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -12px;
+        bottom: -16px;
+        width: 90px;
+        height: 1px;
+        background: #FAFAFA;
+      }
+    }
+    .channel-name-ch {
+      display: block;
+      line-height: 33px;
+      font-size: 24px;
+    }
+    .channel-name-en {
+      line-height: 17px;
+      font-size: 12px;
+    }
+  }
+  &.white {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    .gallery-channel-item {
+      &.current {
+        color: #323232;
+        &:before {
+          background: #000;
+        }
+      }
+    }
+  }
+}
+.filter-title-wrap {
+  width: 100%;
+  height: 52px;
+  line-height: 52px;
+  background-color: #212121;
+  .latest-selected,
+  .latest {
+    cursor: pointer;
+    margin-right: 40px;
+    float: left;
+    height: 52px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #b3b3b3;
+  }
+  .latest-selected {
+    color: #ffffff;
+  }
+}
+.banner-runway {
+  padding-top: 40px;
+  .title {
+    position: relative;
+    padding: 18px 0;
+    border-top: rgba(250, 250, 250, .08);
+    font-size: 16px;
+    color: #B3B3B3;
+   
+    .classify {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 20px;
+      &:hover {
+        .runway-filter {
+          //transition: all .3s ease;
+          //height: 590px;
+          display: block;
+        }
+      }
+      .screen-img {
+        display: flex;
+        align-items: center;
+        &:before {
+          display: block;
+          content: '';
+          width: 15px;
+          height: 15px;
+          background: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/20180525/1527231339555_324584593.png) no-repeat center;
+          margin-right: 15px;
+        }
+      }
+      .runway-filter {
+        display: none;
+        //height: 0;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        background: black;
+        overflow: hidden;
+        z-index: 1;
+        padding: 0 10px 10px;
+        .runway-filter-change {
+          height: 80px;
+          padding-top: 20px;
+          button {
+            width: 120px;
+            height: 40px;
+            margin: 0 10px 20px 0;
+            color: #999;
+            border-radius: 20px;
+            &:hover {
+              background: rgba(249, 249, 249, 0.1);
+            }
+
+            &.current {
+              color: #fff;
+              background: $deeperBlueGradient;
+            }
+          }
+        }
+      }
+    }
+  }
+  .banner-runway-img {
+    margin-top: 30px;
+    display: flex;
+    overflow: hidden;
+    li {
+      //flex: 1;
+      //width: 288px;
+      margin-right: 20px;
+      .banner-img-bg {
+        position: relative;
+        display: block;
+        width: 288px;
+        height: 431px;
+        margin-bottom: 6px;
+        background-color: #1d1d1d;
+        background-size: cover;
+        background-position: top;
+        overflow: hidden;
+        border-radius: $borderRadius;
+        &:hover:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, .1);
+        }
+      }
+      .banner-img-footer {
+        color: #777;
+        .designer {
+          display: block;
+          margin: 12px 0 5px;
+          font-size: 16px;
+          color: #fafafa;
+        }
+        .season,
+        .city,
+        .time {
+          margin-right: 10px;
+        }
+        &.null {
+          .designer,
+          .season,
+          .city,
+          .time {
+            height: 16px;
+            background-color: #1d1d1d;
+          }
+          .designer {
+            width: 50%;
+          }
+          .season,
+          .city,
+          .time {
+            width: 20%;
+          }
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

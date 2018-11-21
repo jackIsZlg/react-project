@@ -1,0 +1,123 @@
+#guide-download {
+  width: 100%;
+  height: 100%;
+  background: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/20180607/1528357993876_1907336770.jpg) no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .guide-tip {
+    opacity: 0;
+    position: fixed;
+    top: .4rem;
+    right: .3rem;
+    width: 4rem;
+    background: #fff;
+    font-size: .26rem;
+    color: #111111;
+    border-radius: .1rem;
+    padding: .2rem;
+    transition: opacity .3s;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: -.15rem;
+      right: .3rem;
+      width: 0;
+      height: 0;
+      border-bottom: .15rem solid #fff;
+      border-right: .15rem solid rgba(0, 0, 0, 0);
+      border-left: .15rem solid rgba(0, 0, 0, 0);
+    }
+  }
+  .guide-header {
+    width: 100%;
+    padding: 1rem 0 0;
+    -webkit-animation: logo 1.5s;
+    -mos-animation: logo 1.5s;
+    -moz-animation: logo 1.5s;
+    -ms-animation: logo 1.5s;
+    -o-animation: logo 1.5s;
+    animation: logo 1.5s;
+    .guide-logo {
+      height: 3.5rem;
+      background: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/20180607/1528358053787_694600457.jpg) no-repeat center/60%;
+    }
+    p {
+      text-align: center;
+      font-size: .3rem;
+      color: rgba(255, 255, 255, .5);
+      margin-top: .3rem;
+    }
+  }
+  .download-btn {
+    width: 2.8rem;
+    height: .85rem;
+    line-height: .85rem;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: .4rem;
+    font-size: .36rem;
+    color: #fff;
+    margin: 1rem auto;
+  }
+  .guide-iphone {
+    width: 100%;
+    -webkit-animation: iphone 1.5s;
+    -mos-animation: iphone 1.5s;
+    -moz-animation: iphone 1.5s;
+    -ms-animation: iphone 1.5s;
+    -o-animation: iphone 1.5s;
+    animation: iphone 1.5s;
+    height: 35%;
+    background: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/20180607/1528358091958_2036001109.jpg) no-repeat top/80%;
+  }
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-.4rem);
+    -moz-transform: translateY(-.4rem);
+    -mos-transform: translateY(-.4rem);
+    -ms-transform: translateY(-.4rem);
+    -o-transform: translateY(-.4rem);
+    transform: translateY(-.4rem);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -mos-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes iphone {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(.4rem);
+    -moz-transform: translateY(.4rem);
+    -mos-transform: translateY(.4rem);
+    -ms-transform: translateY(.4rem);
+    -o-transform: translateY(.4rem);
+    transform: translateY(.4rem);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -mos-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}

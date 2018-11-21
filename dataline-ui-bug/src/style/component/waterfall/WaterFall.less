@@ -1,0 +1,126 @@
+#container {
+  margin-top: 10px;
+  transform: translateZ(0);
+}
+
+/*初次加载*/
+.water-fall-loading {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.water-fall-loading img {
+  width: 40px;
+}
+
+/*瀑布流单元基础样式*/
+.water-fall-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //width: 300px;
+  margin-bottom: 33px;
+  opacity: 0;
+  transition: transform .3s ease-in-out, opacity .3s .3s;
+  background: #FFF;
+  border-radius: 3px;
+}
+
+.btn-no-collect {
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+  font-size: 18px;
+  transition: all .3s ease;
+  &.btn-collect {
+    -webkit-text-stroke: 2px #D81E06;
+    color: #D81E06;
+  }
+}
+
+.water-fall-item:hover .btn-del-item {
+  display: block;
+}
+
+.water-fall-item .btn-del-item {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /*width: 40px;*/
+  /*height: 30px;*/
+  padding: 5px;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .2);
+
+}
+
+.water-fall-item .btn-del-item-2 {
+  top: 50px;
+}
+
+.water-fall-item.text {
+  border: 1px solid #ccc;
+  padding: 20px 10px;
+  font-size: 20px;
+  color: #4845f1;
+}
+
+.water-fall-item-img {
+  position: relative;
+  &:hover {
+    cursor: zoom-in;
+  }
+  .water-fall-item-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+  }
+}
+
+.water-fall-item-img img {
+  vertical-align: top;
+  border-radius: 3px;
+}
+
+/*hover阴影*/
+.water-fall-item.shadow:before {
+  content: '';
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: -10px;
+  padding: 10px;
+  opacity: 0;
+  background: rgba(0, 0, 0, .05);
+  border-radius: 8px;
+  transition: all .3s;
+  transform: scale(0.93);
+}
+
+.water-fall-item.shadow:hover:before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*动画*/
+@keyframes itemShow {
+  0%, 90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transition: transform .2s;
+  }
+}

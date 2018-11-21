@@ -1,0 +1,66 @@
+@import "../../common/variable";
+
+.invite-confirm-pane {
+  & > div {
+    width: 300px;
+    margin: 95px auto 0;
+  }
+  .user-info {
+    position: relative;
+    font-size: 16px;
+    color: #999;
+    .name {
+      display: block;
+      width: 210px;
+      padding: 3px 0 7px;
+      line-height: 24px;
+      font-size: 24px;
+      color: #323232;
+    }
+    .avatar {
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include avatar(60px);
+    }
+  }
+  .folder-info {
+    margin: 24px 0 40px;
+    .name {
+      margin-bottom: 5px;
+      font-size: 30px;
+      color: #111;
+    }
+    .intro {
+      display: none;
+      font-size: 12px;
+      color: #B3B3B3;
+      .more {
+        cursor: pointer;
+        margin-left: 3px;
+        &:hover {
+          color: #818181;
+        }
+      }
+    }
+    @include fileCover(300px);
+    .file-cover {
+      margin-top: 17px;
+      cursor: default;
+    }
+  }
+  .btn-list {
+    display: flex;
+    button {
+      height: 40px;
+    }
+    .btn-refuse {
+      width: 88px;
+      margin-right: 13px;
+    }
+    .btn-agree,
+    .btn-status {
+      flex: 1
+    }
+  }
+}

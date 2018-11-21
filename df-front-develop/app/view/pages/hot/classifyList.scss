@@ -1,0 +1,53 @@
+@import '../../common/variable';
+
+.classify-header {
+  display: flex;
+  margin: 104px auto 50px;
+  width: 606px;
+  .classify-name {
+    flex: 1;
+    font-size: 36px;
+    color: #777;
+    padding-top: 2px;
+  }
+  .select-style {
+    flex: 1;
+    li {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      float: right;
+      font-size: 14px;
+      color: #FFF;
+      border-radius: $borderRadius;
+      overflow: hidden;
+      margin-left: 10px;
+      span {
+        cursor: pointer;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      &.current:before {
+        cursor: pointer;
+        content: '';
+        position: absolute;
+        @include position-0;
+        background: rgba(0, 0, 0, .9);
+      }
+      &.style-image {
+        background-image: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/static-web/classify-image.jpg);
+        background-size: 240px;
+      }
+      &.style-all {
+        background-position: -160px 0;
+      }
+      &.style-EA {
+        background-position: -80px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+#download-panal {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  header {
+    position: relative;
+    margin: 10px;
+    line-height: 68px;
+    font-size: 12px;
+    color: #777777;
+    background: #D8EEFF;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba(211, 230, 236, 0.42);
+    &:after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      right: 8px;
+      width: 0;
+      height: 0;
+      border-bottom: 8px solid #D8EEFF;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+    }
+  }
+  .tip-panel {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .text-tip {
+    margin: 9px;
+    color: #323232;
+    div:last-child {
+      margin-top: 12px;
+      font-size: 12px;
+    }
+  }
+  a {
+    position: absolute;
+    bottom: 17%;
+    margin-left: -60px;
+    width: 120px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #FFFFFF;
+    background-image: linear-gradient(-135deg, #66B0FC 0%, #4887FA 100%);
+    border-radius: 20px;
+  }
+}

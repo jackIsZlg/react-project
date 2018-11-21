@@ -1,0 +1,54 @@
+.banner.ins-follow{
+  padding-top: 82px;
+  text-align: center;
+  font-size: 16px;
+  color: #111111;
+  div{
+    padding: 2px 0;
+    font-size: 12px;
+    color: #999999;
+  }
+}
+
+// ins列表状态
+#user-ins-list {
+  .ins-header{
+    margin-top: 30px;
+    font-size: 16px;
+    color: #121212;
+    overflow: hidden;
+    .ins-header-followed{
+      float: right;
+      span{
+        font-size: 24px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .ins-description{
+    margin: 15px 0 40px;
+    font-size: 14px;
+    color: #999999;
+  }
+  .ins-account-state {
+    margin-top: 150px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: #121212;
+    .ins-account-recommend{
+      margin: 20px 0 70px;
+      font-size: 14px;
+      color: #999999;
+      line-height: 0;
+    }
+    button {
+      width: 210px;
+      height: 68px;
+      margin-top: 33px;
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 0;
+    }
+  }
+}

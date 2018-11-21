@@ -1,0 +1,138 @@
+/*
+布局
+body(0)
+  #app
+    #content (z-index:10+)
+    #pop 包括登陆层(10000)，博客详情层(100)，精选层(1000),订阅层(1000),df_alert,df_confirm(10000)
+*/
+@import "variable";
+
+@mixin layoutContainer($i) {
+  .folder-item-content {
+    width: $itemWidth*(($i)-1)+$itemWidthMargin*(($i)-2);
+    float: left;
+  }
+  #header {
+    .container {
+      #channel {
+        li {
+          padding: 0 #{5*$i}px;
+        }
+      }
+      .header-right {
+        #btn-search .search-pane.hover #search-tab {
+          width: #{40*$i}px;
+        }
+        #btn-search .search-pane.ishover #search-tab {
+          width: #{40*$i}px;
+        }
+      }
+    }
+  }
+
+  //首页-热门精选集
+  #hot-collection {
+    .hot-content {
+      .hot-image-item {
+        &:nth-child(#{$i}n) {
+          margin-right: 0;
+        }
+        &:nth-child(#{$i}+1) ~ .hot-image-item {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .container {
+    width: $itemWidth*$i+$itemWidthMargin*(($i)-1);
+    #file-list {
+      //:nth-child --> 指的是其父元素的所有子元素的第几个，匹配时，要先匹配数量，再匹配标签
+      .file-item:nth-child(#{$i}n+1) {
+        margin-right: 0;
+      }
+    }
+
+    // 精选集
+    &.folder-gather {
+      .file-item:nth-child(#{$i}n) {
+        margin-right: 0;
+      }
+    }
+
+    .notice-item-down {
+      // 精选集被收藏
+      .notice-item-collector-info {
+        .notice-item-user:nth-child(#{$i+1}n) {
+          margin-right: 0;
+        }
+      }
+      // 精选集中的图片被收藏
+      .notice-item-folder-info {
+        .file-item:nth-child(#{$i}n) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    // 文章列表
+    .article-container {
+      figure:nth-child(#{$i}n) {
+        margin-right: 0;
+      }
+    }
+  }
+  .container-history {
+    position: relative;
+    left: $itemWidth*$i+$itemWidthMargin*(($i)-1)-$itemWidthFoot*(($i*2)-1)-$itemWidthMarginFoot*(($i*2)-2);
+    width: $itemWidthFoot*(($i*2)-1)+$itemWidthMarginFoot*(($i*2)-2);
+    max-width: 100%;
+  }
+  .time-line-history span {
+    left: -11-($itemWidth*$i+$itemWidthMargin*(($i)-1)-$itemWidthFoot*(($i*2)-1)-$itemWidthMarginFoot*(($i*2)-2)-73) !important;
+  }
+}
+
+#app {
+  #content {
+    position: relative;
+    min-height: calc(100vh);
+    box-sizing: border-box;
+    padding: $headerHeight 0 210px;
+  }
+  .pop-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  min-width: 1212px;
+  max-width: 1828px;
+}
+
+@for $i from 3 to 7 {
+  @if ($i == 6) {
+    @media (min-width: $itemWidth*$i+$itemWidthMargin*(($i)-1)) {
+      @include layoutContainer(($i)-1);
+    }
+  } @else {
+    @media (min-width: $itemWidth*$i+$itemWidthMargin*(($i)-1)) and(max-width: $itemWidth*($i+1)+$itemWidthMargin*$i) {
+      @if ($i==3) {
+        @include layoutContainer(4);
+      } @else {
+        @include layoutContainer($i);
+      }
+    }
+    @media (max-width: 903px) {
+      @include layoutContainer(4);
+    }
+  }
+}

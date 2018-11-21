@@ -1,0 +1,120 @@
+/*
+ * 瀑布流首屏加载过程
+ */
+@keyframes loading_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingRotate {
+  0% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(320deg);
+  }
+}
+
+@keyframes loadingSuccess {
+  0%, 90% {
+    transform: scale(.1);
+    opacity: .3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*
+ * 初次加载移动残影问题
+ */
+@keyframes itemShow {
+  0%, 90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transition: transform .2s;
+  }
+}
+
+// 举报弹窗textarea
+@keyframes showAll {
+  99% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: auto;
+  }
+}
+
+// 背景色变图片
+@keyframes showAll {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// 精选集操作动画
+@keyframes folder-up {
+  0% {
+    // 脱离渲染层，避免滚动引起抖动
+    transform: translate3d(0, 54px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// 图片展开动画
+@keyframes bloggerImgTop {
+  0% {
+    top: 10px;
+    height: 0;
+  }
+  100% {
+    top: -290px;
+    height: 300px;
+  }
+}
+
+@keyframes bloggerImgBottom {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 300px;
+  }
+}
+
+@keyframes bloggerImgShow {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 280px;
+  }
+}
+
+// loading旋转
+@keyframes loadingC {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

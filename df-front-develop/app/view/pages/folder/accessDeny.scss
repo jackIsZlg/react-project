@@ -1,0 +1,33 @@
+@import "../../common/variable";
+
+.deny-folder-pane {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  .icon-delete,
+  .icon-folder-private {
+    display: inline-block;
+    @include squareCenter(52px);
+    background: #DDD;
+    color: #fff;
+    font-size: 28px;
+    border-radius: $borderRadiusBig;
+  }
+  .main-tip {
+    margin: 35px 0 14px;
+    font-size: 18px;
+    color: #111;
+  }
+  .sub-tip {
+    margin-bottom: 134px;
+    font-size: 12px;
+    color: #323232;
+  }
+  a {
+    display: inline-block;
+    width: 152px;
+    line-height: 50px;
+  }
+}

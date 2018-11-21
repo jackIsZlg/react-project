@@ -1,0 +1,19 @@
+@import "../../common/variable";
+
+@mixin imgLayout($i) {
+  // .info-right {
+  //   width: $blogImgWidth*$i+$itemWidthMargin*(($i)-1);
+  // }
+}
+
+@for $i from 3 to 7 {
+  @if ($i == 6) {
+    @media (min-width: $itemWidth*$i+$itemWidthMargin*(($i)-1)) {
+      @include imgLayout(($i)-2);
+    }
+  } @else {
+    @media (min-width: $itemWidth*$i+$itemWidthMargin*(($i)-1)) and(max-width: $itemWidth*($i+1)+$itemWidthMargin*$i) {
+      @include imgLayout(($i)-2);
+    }
+  }
+}

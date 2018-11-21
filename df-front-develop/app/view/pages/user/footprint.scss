@@ -1,0 +1,166 @@
+@import "../../common/variable";
+
+$styleItemHeight: 50px;
+.container-history.null {
+  left: 0;
+  width: 100%;
+}
+
+//分类标签
+.style-list {
+  display: none;
+  margin-top: 45px;
+  text-align: center;
+  .style-item {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 84px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    margin: 0 10px 10px 0;
+    border-radius: $borderRadius;
+    background-image: url('https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/static-web/style-list-2.0.jpg');
+    background-size: 100% auto;
+    overflow: hidden;
+    span {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    &.disabled {
+      span {
+        cursor: default;
+      }
+    }
+    &.current:before,
+    &.disabled:before {
+      cursor: auto;
+      content: '';
+      position: absolute;
+      @include position-0;
+      background: rgba(255, 255, 255, .8);
+    }
+    &.current:before {
+      cursor: pointer;
+      background: rgba(0, 0, 0, .9);
+    }
+  }
+
+  .style-item-1 {
+    background-position: 0 -300%;
+  }
+
+  .style-item-2 {
+    background-position: 0 -600%;
+  }
+
+  .style-item-3 {
+    background-position: 0 -500%;
+  }
+
+  .style-item-4 {
+    background-position: 0 -400%;
+  }
+
+  .style-item-5 {
+    background-position: 0 -100%;
+  }
+
+  .style-item-6 {
+    background-position: 0 -700%;
+  }
+
+  .style-item-7 {
+    background-position: 0 -200%;
+  }
+
+  .style-item-8 {
+    background-position: 0 0;
+  }
+}
+
+#history-wrapper{
+  margin-top: 30px;
+}
+
+// 足迹-时间轴
+.time-axis {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 68px;
+  .p-line-pane {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    bottom: 55px;
+    width: 1px;
+    overflow: hidden;
+  }
+  .p-line,
+  .p-line-black {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: #e5e5e5;
+  }
+  .p-line-black {
+    transition: height .3s;
+    height: 0;
+    max-height: 100%;
+    background: #b3b3b3;
+  }
+  .time-line-tag {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    width: 56px;
+    margin-left: -8px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: $borderRadius;
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 56px;
+      line-height: 35px;
+      text-align: center;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 63px;
+      height: 35px;
+      background: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/static-web/time-history-black.png);
+      background-size: 100%;
+    }
+    &.gray {
+      color: #1d1d1d;
+      &:before {
+        background: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/static-web/time-history-white.png);
+        background-size: 100%;
+      }
+    }
+    &.top {
+      position: fixed;
+      top: 64px !important;
+    }
+    &.bottom {
+      position: fixed;
+    }
+    &.show {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "variable";
+
+.pagination {
+  margin-top: 52px;
+  text-align: center;
+  li {
+    display: inline-block;
+    margin-right: 5px;
+    @include squareCenter(32px);
+    border-radius: $borderRadius;
+    overflow: hidden;
+  }
+  a, span {
+    display: block;
+    color: #323232;
+    font-size: 12px;
+    line-height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .disabled {
+    a {
+      cursor: not-allowed;
+      color: #bbb;
+    }
+  }
+  .active {
+    a {
+      background: #4887FA;
+      color: #FFF;
+      line-height: 32px;
+      border: 0;
+    }
+  }
+  li.jump{
+    width: auto;
+    height: auto;
+  }
+  .jump-txt {
+    width: 43px;
+    height: 32px;
+    border-radius: 8px;
+    border: solid 1px #dfdfdf;
+    text-align: center;
+  }
+  .jump-btn {
+    color: #121212;
+    cursor: pointer;
+    transition: all 200ms;
+    &:hover{
+      color:#4887FA;
+    }
+    &:active{
+      opacity: 0.8;
+    }
+  }
+}

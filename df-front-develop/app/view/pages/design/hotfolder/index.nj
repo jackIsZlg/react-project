@@ -1,0 +1,18 @@
+{# 热门精选集装修组件 #}
+<li class="hot-image-item" style='visibility: hidden;'>
+    <div class="folder-img">
+        {# <img class="folder-cover" src="{{helper.ossImg(item.cover, 1)}}" width="0" height="0" alt='deepfashion'> #}
+        <img class="folder-cover" src="" width="0" height="0" alt='deepfashion'>
+    </div>
+    <div class="hot-image-footer">
+    <div class="hot-folder-name">{{item.newTitle}}</div>
+    <div class="hot-folder-info">
+        图片<span>{{item.folderDTO.folderCount}}</span><em></em>浏览<span>{{item.folderDTO.viewCount}}</span>
+    </div>
+    <div class="hot-folder-user">
+        {# <img src="{{helper.ossImg(item.folderDTO.createrAvator, 0)}}" width="0" height="0"  alt='deepfashion'> #}
+        <img src="" width="0" height="0"  alt='deepfashion'>
+        <div class="hot-folder-nickname">{{item.folderDTO.createrName}}</div>
+        </div>
+    </div>
+</li>

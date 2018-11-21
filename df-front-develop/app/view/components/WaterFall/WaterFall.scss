@@ -1,0 +1,1351 @@
+@import "../../common/variable";
+
+// 订阅按钮
+.btn-show-subscribe {
+  font-weight: $fontMedium;
+}
+
+.water-fall-loading {
+  text-align: center;
+  margin-top: 100px;
+  img {
+    width: 40px;
+  }
+}
+
+// 加载中
+.load-more {
+  cursor: pointer;
+  line-height: 44px;
+  font-size: 14px;
+  color: #646464;
+  height: 44px;
+  margin-bottom: 20px;
+  background: #F0F0F0;
+  text-align: center;
+}
+
+.water-fall-tab {
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .total-num-tab {
+    margin: 20px 0 0;
+    font-size: 16px;
+    color: #1D1D1D;
+    font-weight: 600;
+  }
+  .filter-tab {
+    margin: 20px 0 0;
+    display: inline-block;
+    li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 5px 11px;
+      margin-right: 10px;
+      font-size: 12px;
+      color: #646464;
+      border-radius: $borderRadius;
+      border: 1px solid #E6E6E6;
+      &.current {
+        font-weight: $fontWeightBold;
+        color: #FFFFFF;
+        background: #323232;
+        border: 1px solid #323232;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .btn-search-owner,
+  .btn-show-import-ins,
+  .btn-show-subscribe,
+  .btn-recom-blogger {
+    padding: 0 16px;
+    font-size: 12px;
+    color: #4A4A4A;
+    height: 30px;
+    background: #FFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 15px;
+    overflow: hidden;
+    &:hover {
+      color: #111111;
+      border: 1px solid rgba(17, 17, 17, 0.36);
+    }
+    //&:active {
+    //  background: #E2373A;
+    //  color: #FFFFFF;
+    //  border: 1px solid #E2373A;
+    //}
+  }
+}
+
+#container {
+  position: relative;
+  margin-top: 20px;
+  display: block;
+  .get-data-animation {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.water-fall-panel-new {
+  margin: 0 auto;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+  flex: 1;
+  margin-right: 20px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// 单图推荐标题
+.water-fall-recommend-title {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #323232;
+}
+
+.water-fall-item.home-runway {
+  margin-bottom: 40px;
+  .water-fall-item-img {
+    display: block;
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    &:hover:after {
+      transition: opacity .2s;
+      opacity: 1;
+    }
+    &:after {
+      opacity: 0;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .1);
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .brand-img-footer {
+    margin-top: 12px;
+    .season{
+      font-size: 16px;
+      color: #121212;
+    }
+  }
+  .banner-img-footer {
+    color: #777;
+    .designer {
+      display: block;
+      margin: 12px 0 5px;
+      font-size: 16px;
+      color: #fafafa;
+    }
+
+    .season,
+    .city,
+    .time {
+      margin-right: 10px;
+    }
+    &.null {
+      .designer,
+      .season,
+      .city,
+      .time {
+        height: 16px;
+        background-color: #1d1d1d;
+      }
+      .designer {
+        width: 50%;
+      }
+      .season,
+      .city,
+      .time {
+        width: 20%;
+      }
+    }
+  }
+}
+
+// 瀑布流单元基础样式
+.water-fall-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  //background: #FFFFFF;
+  margin-bottom: 20px;
+  transition: transform .3s ease-in-out, opacity .3s .4s;
+  .add-folder {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 7px;
+    font-size: 14px;
+    z-index: 1;
+    .iconfont {
+      font-size: 15px;
+      margin-right: 5px;
+    }
+  }
+  .cancel-folder {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 70px;
+    padding: 7px 0;
+    font-size: 14px;
+    .iconfont {
+      display: inline-block;
+    }
+    &.loading {
+      cursor: auto;
+      display: block !important;
+      .iconfont {
+        animation: loadingRotate .6s infinite;
+      }
+    }
+    &.success {
+      display: block !important;
+      .iconfont {
+        opacity: 0;
+        animation: loadingSuccess .8s .3s forwards;
+      }
+    }
+  }
+  .btn-dislike-img {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 66px;
+    height: 26px;
+    color: #1d1d1d;
+    background: #FAFAFA;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    font-size: 10px;
+    .iconfont {
+      margin-right: 4px;
+      font-size: 14px;
+    }
+    &:hover {
+      background: #FFF;
+    }
+    &.isBtn {
+      cursor: default;
+      display: block;
+      color: rgba(0, 0, 0, 0.10);
+      background: transparent;
+      border: 0;
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+  .cancel-btn{
+    z-index: 99;
+    display: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 26px;
+    bottom: 5px;
+    right: 5;
+    width: 53px;
+    height: 26px;
+    background-color: rgba(16, 17, 30, 0.4);
+    border-radius: 3px;
+    position: absolute;
+    color: #fff;
+  }
+  &:hover {
+    .add-folder {
+      display: block;
+    }
+    .cancel-btn{
+      display: block
+    }
+    .cancel-folder {
+      display: block;
+    }
+    .btn-dislike-img {
+      display: block;
+    }
+  }
+}
+
+// 瀑布流单元，主图hover效果
+.water-fall-item.ins,
+.water-fall-item.runway {
+  width: 288px;
+  .water-fall-item-img {
+    cursor: zoom-in;
+    position: relative;
+    border-radius: $borderRadiusBig;
+    overflow: hidden;
+    img {
+      vertical-align: top;
+    }
+    &:after {
+      box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: all .3s;
+    }
+    &:hover:after {
+      background: rgba(255, 255, 255, .08);
+    }
+  }
+}
+
+.water-fall-item.upload-add {
+  cursor: pointer;
+  width: 288px;
+  height: 350px;
+  .upload-add-icon {
+    width: 100%;
+    height: 100%;
+    background: #F0F0F0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #B3B3B3;
+    letter-spacing: -0.34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .icon-new-folder-2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// 订货会
+.water-fall-item.order {
+  width: 288px;
+  height: 244px;
+  margin-bottom: 40px;
+  &.item {
+    height: 400px;
+  }
+  &:hover {
+    .order .water-fall-img-mask {
+      opacity: 1;
+    }
+  }
+  .water-fall-item-img {
+    cursor: pointer;
+    position: relative;
+    border-radius: $borderRadiusBig;
+    overflow: hidden;
+    &.order {
+      height: 194px;
+      position: relative;
+      // 订货会遮罩层
+      .water-fall-img-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.20);
+        opacity: 0;
+        transition: opacity .2s;
+        z-index: 1;
+        .water-fall-time {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.50);
+          text-align: center;
+          line-height: 40px;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.50);
+          letter-spacing: -0.34px;
+          overflow: hidden;
+          padding: 0 10px;
+          .time {
+            float: left;
+          }
+          .file-item-num {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            padding: 0 7px;
+            line-height: 26px;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.4);
+            border-radius: $borderRadius;
+            z-index: 3;
+            .iconfont {
+              margin-right: 5px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .water-fall-img-scale {
+        width: 100%;
+        height: 100%;
+        &:after {
+          display: block;
+          content: '';
+          clear: both;
+        }
+        img {
+          display: block;
+          width: 144px;
+          height: 194px;
+          min-width: 144px;
+          min-height: 194px;
+          object-fit: cover;
+          float: left;
+          &.image-display {
+            min-width: 288px;
+            min-height: 194px;
+            width: 288px;
+            height: 194px;
+            object-fit: cover;
+          }
+          &.rotate-img {
+            transform: rotateY(180deg);
+            transform-origin: 72px 0;
+          }
+        }
+      }
+    }
+    &.item {
+      height: 350px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .water-fall-item-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    .water-fall-item-footer-tag {
+      width: 100%;
+      height: 28px;
+      &.order-meeting {
+        display: flex;
+        li {
+          cursor: pointer;
+          margin-right: 16px;
+          border: 1px solid #DDDDDD;
+          border-radius: 16px;
+          font-size: 12px;
+          color: #787878;
+          letter-spacing: -0.29px;
+          line-height: 28px;
+          padding: 0 10px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: 130px;
+          &:hover {
+            border: 1px solid #4887FA;
+            color: #4887FA;
+          }
+        }
+      }
+      &.order-folder {
+        li {
+          max-width: 180px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          float: left;
+          margin-right: 15px;
+          font-size: 14px;
+          color: #1D1D1D;
+          letter-spacing: -0.34px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+// 博客单元
+.water-fall-item.ins,
+.water-fall-item.runway {
+  .water-fall-item-footer {
+    padding: 15px 10px 5px;
+    .user-info {
+      position: relative;
+      height: 26px;
+      .avatar {
+        img {
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          overflow: hidden;
+          vertical-align: middle;
+        }
+        div { // 图片占位
+          display: inline-block;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+      .name {
+        position: absolute;
+        left: 34px;
+        right: 38px;
+        line-height: 26px;
+        font-size: 14px;
+        color: #1d1d1d;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: $fontMedium;
+      }
+      .item-zan {
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 26px;
+        color: #969696;
+        .iconfont {
+          margin-right: 6px;
+        }
+        span {
+          display: inline-block;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
+
+.water-fall-item.ins.detail {
+  .water-fall-item-footer {
+    padding: 15px 10px 5px;
+    color: #B4B4B4;
+    .iconfont {
+      font-size: 18px;
+      margin-right: 7px;
+    }
+    .item-fav {
+      display: none;
+    }
+    .icon-collection {
+      cursor: pointer;
+      &.check {
+        color: #EC8514;
+      }
+    }
+  }
+}
+
+// 精选集内部编辑
+.water-fall-item.folder-select {
+  .add-folder,
+  .cancel-folder {
+    display: none !important;
+  }
+  .water-fall-item-img {
+    cursor: pointer;
+  }
+  .select-area {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    padding: 2px;
+    border-radius: $borderRadiusBig;
+    background: #fff;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .4);
+      border-radius: 4px;
+    }
+    &:after {
+      content: '\e66a';
+      position: absolute;
+      font-family: iconfont;
+      top: 5px;
+      left: 5px;
+      font-size: 14px;
+      color: #fff;
+    }
+    &.select {
+      &:before {
+        background: #4887FA;
+      }
+    }
+  }
+}
+
+// 足迹-博客单元
+.water-fall-item.history {
+  width: 150px;
+  border-radius: $borderRadius;
+  overflow: hidden;
+  margin-bottom: 10px;
+  z-index: 9;
+  .add-folder {
+    right: 5px;
+    top: 5px;
+  }
+  .water-fall-item-img {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all .3s;
+      background: rgba(0, 0, 0, .3);
+    }
+    &:hover {
+      cursor: zoom-in;
+      .name {
+        display: block;
+      }
+      &:before {
+        opacity: 1;
+      }
+    }
+    &:after {
+      border: 0;
+    }
+  }
+  .name {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: #fff;
+  }
+  &:hover {
+    .name {
+      display: block;
+    }
+  }
+}
+
+// 博主单元
+.water-fall-item.owner {
+  width: 288px;
+  height: 380px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, .05);
+  border-radius: 8px;
+  .blog-content {
+    cursor: pointer;
+    transform: translate(0, 0);
+  }
+
+  .bg-avatar {
+    display: block;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    border-radius: $borderRadius;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(30, 30, 30, .4);
+    }
+  }
+
+  .avatar {
+    position: relative;
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 86px auto 17px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 120px;
+    img {
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .icon-spider {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 0 6px;
+      font-size: 12px;
+      line-height: 22px;
+      border: 1px solid #fff;
+      border-radius: 12px;
+    }
+    .icon-blogger-private {
+      background: #1D1D1D;
+      color: #fff;
+    }
+    .icon-blogger-loading {
+      background: #F0F0F0;
+      color: #818181;
+    }
+  }
+
+  .runway-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .user-info {
+    text-align: center;
+    font-weight: $fontMedium;
+    .icon-ins-verified {
+      width: 22px;
+      margin: -5px 0 -5px 5px;
+      color: #4D97F4;
+    }
+  }
+
+  .name {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #323232;
+    .one-line {
+      max-width: 200px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .post-fan {
+    font-size: 12px;
+    color: #969696;
+  }
+
+  .post-list {
+    display: flex;
+    margin-top: 28px;
+    list-style: none;
+    li {
+      flex: 1;
+      width: 100%;
+      margin-right: 6px;
+      padding-top: 92px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-color: #e5e5e5;
+      border-radius: $borderRadius;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .icon-fetch {
+    //position: absolute;
+    //left: 10px;
+    //bottom: 54px;
+    //width: 268px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+    color: #999999;
+    margin-top: 30px;
+    &.tip {
+      background: #1D1D1D;
+      border-radius: 12px;
+      color: #fff;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 24px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        margin-left: -3px;
+        border-top: 6px solid #1d1d1d;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+    }
+  }
+
+  .btn-follow {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 266px;
+    height: 32px;
+    font-size: 12px;
+    font-weight: $fontMedium;
+    border-radius: $borderRadiusBig;
+    &.fan {
+      background: #DDD;
+    }
+  }
+}
+
+.water-fall-item.ins-follow {
+  .blog-content,
+  .avatar,
+  .intro ,
+  .icon-fetch {
+    transition: all .3s;
+  }
+  .intro {
+    height: 0;
+    padding: 0 27px;
+    overflow: hidden;
+    font-size: 12px;
+    color: #999;
+  }
+  &:hover {
+    .blog-content {
+      transform: translateY(-90px);
+    }
+    .avatar {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    .intro {
+      display: table;
+      width: 100%;
+      height: 215px;
+      div {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    .icon-fetch{
+      margin-top: 20px;
+    }
+  }
+}
+
+// 秀场单元,头像部分重写
+.water-fall-item.runway {
+  .water-fall-item-footer {
+    .user-info {
+      .avatar {
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 26px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.water-fall-item.runway.board {
+  cursor: pointer;
+  @include fileCover(288px);
+  .runway-info {
+    margin-top: 10px;
+    .designer {
+      font-size: 16px;
+      color: #1D1D1D;
+      line-height: 22px;
+    }
+    .city-season {
+      line-height: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  }
+}
+
+// hover阴影
+.water-fall-item.shadow {
+  &:before {
+    content: '';
+    box-sizing: content-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: -10px;
+    padding: 10px;
+    opacity: 0;
+    background: rgba(0, 0, 0, .05);
+    border-radius: $borderRadiusBig;
+    transition: all .3s;
+    transform: scale(0.93);
+  }
+  &:hover:before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &:hover {
+    .order .water-fall-img-mask {
+      opacity: 1;
+    }
+  }
+  .water-fall-item-footer.collect{
+    font-size: 14px;
+    color: #666;
+    .user-info{
+      height: auto;
+      .folder-name{
+        cursor: pointer;
+        color: #111111;
+        &:hover{
+          transition: color .2s;
+          color: #66b0fc;
+        }
+      }
+    }
+  }
+}
+
+// 触底，无结果
+.water-fall-bottom,
+.water-fall-no-result {
+  width: 100%;
+  margin: 210px 0 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #999999;
+  &.white {
+    color: #FFFFFF;
+  }
+}
+
+.water-fall-bottom {
+  margin: 40px 0 100px;
+  .water-fall-over {
+    display: inline-block;
+    width: 120px;
+    margin: 0 auto;
+    margin-left: -25px;
+    font-size: 14px;
+    font-weight: $fontWeightBold;
+    line-height: 38px;
+    color: #545454;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+  }
+}
+
+.water-fall-no-result {
+  .search-owner-null-panel {
+    line-height: 32px;
+    .btn-show-subscribe {
+      position: relative;
+      top: -2px;
+      width: 80px;
+      height: 32px;
+      margin: 0 9px;
+      font-size: 14px;
+      background: #111111;
+      color: #fff;
+      border: 0;
+      border-radius: $borderRadius;
+    }
+  }
+  .folder-null-panel {
+    .water-fall-no-result-item {
+      display: inline-block;
+      position: relative;
+      width: $itemWidth;
+      margin-top: -80px;
+      margin-right: $itemWidthMargin;
+      &:last-child {
+        margin-right: 0;
+      }
+      font-size: 14px;
+      color: #B4B4B4;
+      background: #F0F0F0;
+      border-radius: $borderRadiusBig;
+      vertical-align: top;
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .follow-blog-null-panel {
+    .tip-panel {
+      margin-top: -50px;
+      padding: 5px 0 44px;
+      font-size: 20px;
+      color: #999;
+    }
+    .operate-panel {
+      margin-bottom: 69px;
+      .tip {
+        color: #1D1D1D;
+      }
+      .btn-group {
+        margin-top: 27px;
+        .btn-item {
+          display: inline-block;
+          width: 230px;
+          text-align: left;
+          margin-right: 20px;
+          padding: 12px 19px 15px;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          border-radius: $borderRadius;
+          color: #FFF;
+          font-size: 18px;
+          background-image: $deepBlueGradient;
+          span {
+            display: block;
+            margin-top: 5px;
+            font-size: 10px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .search-result-null-panel {
+    .tip-1 {
+      margin: 148px 0 20px;
+      font-size: 20px;
+      color: #545454;
+      font-weight: $fontSemibold;
+    }
+    .tip-2 {
+      font-size: 12px;
+      color: #B4B4B4;
+    }
+  }
+}
+
+//
+.time-line-follow {
+  position: absolute;
+  width: 100%;
+  margin: 70px 0 30px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: $fontWeightBold;
+  color: #1D1D1D;
+  border: 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  /*
+  &:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: #E5E5E5;
+    z-index: 9;
+  }
+   */
+
+  span {
+    color: #323232;
+    font-weight: $fontSemibold;
+    /*
+    position: absolute;
+    left: 50%;
+    margin-left: -104px;
+    width: 208px;
+    height: 20px;
+    z-index: 10;
+    text-align: center;
+    background: #fff;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 30px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #000;
+      overflow: hidden;
+    }
+     */
+  }
+}
+
+// 时间分割线--订阅
+.water-fall-item.time-line {
+  width: 100%;
+}
+
+// 时间线--足迹
+.water-fall-item.time-line-history {
+  width: 100%;
+  margin: 30px 0 10px;
+  &:first-child {
+    margin-top: 0;
+  }
+  span {
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: 2px;
+    left: -20px;
+    border-radius: 50%;
+    background: #dcdcdc;
+    transition: background .3s;
+    &.black {
+      background: #1d1d1d;
+    }
+  }
+  &.time-line-history-last {
+    margin-bottom: 50px;
+  }
+}
+
+// 订阅板块--用户个人信息
+.water-fall-item.user-info {
+  width: 288px;
+  padding: 17px 20px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  &:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+  }
+  .user-info-h {
+    position: relative;
+  }
+  .avatar {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include avatar(80px);
+  }
+  .user-info-r {
+    position: relative;
+    padding-left: 100px;
+    height: 80px;
+    .name {
+      cursor: pointer;
+      padding: 7px 0;
+      font-size: 18px;
+      color: #1D1D1D;
+    }
+    ul {
+      a {
+        color: #777;
+      }
+      li {
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 24px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+      span {
+        display: block;
+        color: #868686;
+        font-size: 14px;
+        margin: 3px 0;
+        font-weight: $fontHeavy;
+      }
+    }
+    .btn-edit-info {
+      display: none;
+      position: absolute;
+      top: 6px;
+      right: 0;
+      width: 36px;
+      line-height: 23px;
+      text-align: center;
+      font-size: 12px;
+      color: #999999;
+      border: 1px solid rgba(0, 0, 0, .08);
+      &:hover {
+        color: #323232;
+        border: 1px solid rgba(0, 0, 0, 0.40);
+      }
+    }
+    &:hover {
+      .name {
+        width: 100px;
+      }
+      .btn-edit-info {
+        display: block;
+      }
+    }
+  }
+  .btn-group {
+    display: flex;
+    padding-top: 20px;
+    text-align: center;
+    .btn {
+      flex: 1;
+      font-size: 12px;
+      color: #1D1D1D;
+      line-height: 32px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: $borderRadiusBig;
+      &:first-child {
+        margin-right: 10px;
+      }
+      &:hover {
+        background: #4887FA;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+// 订阅板块--推荐博主
+.water-fall-item.recommend-owner {
+  width: 288px;
+  .btn-group {
+    margin-top: 10px;
+    .btn {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 7px;
+      font-size: 12px;
+      color: #4A4A4A;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      &:hover {
+        color: #fff;
+        border: 1px solid transparent;
+        background: linear-gradient(-134deg,#1B1B24 0,#252543 100%);
+      }
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+// 灵感页面--banner
+.water-fall-item.index-banner {
+  border-radius: 8px;
+  overflow: hidden;
+  a {
+    position: relative;
+  }
+}
+
+// 自定义搜索
+.water-fall-item.custom-search {
+  .water-fall-item-footer {
+
+  }
+  .more {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .more-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #1B1B24;
+    padding: 2px;
+    background: #fff;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .4);
+    z-index: 1;
+    .title {
+      color: #000;
+      font-size: 14px;
+    }
+    .tag {
+      display: inline-block;
+      line-height: 20px;
+      height: 22px;
+      margin-right: 3px;
+      padding: 0 7px;
+      border-radius: $borderRadius;
+      border: 1px solid #d9d9d9;
+      background: #fafafa;
+      font-size: 12px;
+    }
+  }
+}
+
+// 文章列表
+.water-fall-item.article {
+  width: 288px;
+  margin: 0 20px 20px 0;
+  .a-img {
+    cursor: pointer;
+    width: 100%;
+    height: 162px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 249px;
+      border-radius: $borderRadiusBig;
+    }
+  }
+  figcaption {
+    width: 100%;
+    .a-title {
+      cursor: pointer;
+      font-size: 16px;
+      color: #464646;
+      line-height: 22px;
+      margin: 12px 0 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .article-info {
+      width: 100%;
+      font-size: 12px;
+      color: #999999;
+      line-height: 17px;
+      span {
+        margin-left: 15px;
+      }
+    }
+  }
+}

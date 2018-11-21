@@ -1,0 +1,13 @@
+@import "../../../common/variable";
+
+.folder-gather {
+  margin: 30px auto 0;
+  .result-list {
+    width: 100%;
+    &:after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+}

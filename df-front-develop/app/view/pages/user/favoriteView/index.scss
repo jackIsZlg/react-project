@@ -1,0 +1,34 @@
+// 精选集列表
+#file-list {
+  .file-add {
+    .file-cover-new {
+      position: relative;
+      padding: 0;
+      background: #e5e5e5;
+      div {
+        opacity: 0;
+      }
+      .iconfont {
+        position: absolute;
+        @include position-0;
+        margin: auto;
+        display: block;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        font-size: 25px;
+        color: #818181;
+        text-align: center;
+        line-height: 50px;
+      }
+    }
+    .file-footer {
+      .file-name {
+        span {
+          color: #999
+        }
+      }
+    }
+  }
+}
+

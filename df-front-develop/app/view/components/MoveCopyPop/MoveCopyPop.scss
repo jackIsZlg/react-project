@@ -1,0 +1,98 @@
+@import "../../common/variable";
+
+#move-copy-pop-panel {
+  @include popBg();
+  z-index: 1001;
+
+  .move-copy-pop-panel {
+    @include centerPop();
+    display: flex;
+    width: 800px;
+    height: 640px;
+    max-height: 640px;
+    background: #fff;
+    border-radius: $borderRadius;
+    .cancel-pop {
+      @include closePop;
+    }
+    .pane {
+      width: 50%;
+      top: 0;
+      bottom: 0;
+      height: inherit;
+      overflow: hidden;
+    }
+  }
+  .left.pane {
+    display: block;
+    position: relative;
+    .first-block,
+    .second-block,
+    .folder-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -200px 0 0 -150px;
+      width: 300px;
+      height: 400px;
+      border-radius: $borderRadius;
+      &:before,
+      &:after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: $borderRadius;
+        background: #fff;
+      }
+    }
+    .first-block:before {
+      transform: translate(8px, 8px);
+      border: 1px solid #969696;
+    }
+    .first-block:after {
+      transform: translate(6px, 6px);
+      border: 1px solid #b4b4b4;
+    }
+    .second-block:before {
+      transform: translate(4px, 4px);
+      border: 1px solid #b4b4b4;
+    }
+    .second-block:after {
+      transform: translate(2px, 2px);
+      border: 1px solid #c8c8c8;
+    }
+    .folder-bg {
+      background-size: cover;
+      background-position: center;
+      .folder-bg-mask {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 20%;
+        background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, .4));
+      }
+      &:before {
+        background: rgba(0,0,0,0);
+      }
+      &:after {
+        display: none;
+      }
+    }
+    .folder-num {
+      position: absolute;
+      bottom: 19px;
+      left: 21px;
+      font-size: 12px;
+      color: #FFF;
+      span {
+        display: block;
+        font-size: 20px;
+      }
+    }
+  }
+}

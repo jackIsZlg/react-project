@@ -1,0 +1,202 @@
+@import "../../common/variable";
+$blogSearchHeight: 48px;
+// 搜索页搜索栏
+#search-wrapper {
+  width: 600px;
+  .limit-container{
+    top: $blogSearchHeight+5;
+  }
+  .search-type-list {
+    display: flex;
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius;
+    overflow: hidden;
+    font-size: 12px;
+    li {
+      cursor: pointer;
+      width: 65px;
+      line-height: 34px;
+      text-align: center;
+      color: #999;
+      &.current {
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+        background: rgba(255, 255, 255, 0.16);
+        color: #fff;
+      }
+    }
+  }
+  .search-input {
+    position: relative;
+    &.fashion:before {
+      border-top-left-radius: 0;
+    }
+    input {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 592px;
+      padding: 11px;
+      font-size: 12px;
+      height: 40px;
+      border: 0;
+      border-radius: $borderRadius;
+      text-align: center;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24);
+      &::-webkit-input-placeholder {
+        color: #999;
+      }
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: $borderRadius;
+    }
+    .search-recommend-list {
+      position: absolute;
+      left: 4px;
+      width: 592px;
+      background: #fff;
+      z-index: 100;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24);
+      border-radius: $borderRadius;
+      li {
+        position: relative;
+        padding: 0 15px;
+        font-size: 12px;
+        color: #323232;
+        line-height: 30px;
+        text-align: left;
+        &.hover {
+          background: #FAFAFA;
+        }
+        &.history.hover {
+          .btn-del-history {
+            display: block;
+          }
+        }
+        .btn-del-history {
+          display: none;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 10px;
+          width: 20px;
+          text-align: center;
+          font-size: 12px;
+          color: #b3b3b3;
+        }
+      }
+    }
+  }
+}
+
+// 搜索，推荐博主
+.search-recommend-panel {
+  width: 1062px;
+  padding: 0 5px;
+  margin: 0 auto;
+  .search-recommend-panel-header {
+    margin: 25px 0 43px;
+    padding: 0 5px;
+    color: #323232;
+    font-weight: $fontSemibold;
+    .btn-next {
+      width: 70px;
+      height: 30px;
+      font-size: 12px;
+      color: #545454;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+    }
+  }
+  .recommend-list {
+    position: relative;
+    .blogger-panel {
+      text-align: center;
+      .blogger-item {
+        display: inline-block;
+        width: 253px;
+        height: 122px;
+        margin: 0 5px 30px;
+        padding: 10px;
+        background: #FFF;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        border-radius: 8px;
+        transition: all .3s;
+        vertical-align: top;
+        .avatar {
+          cursor: pointer;
+          float: left;
+          @include avatar(100px);
+          border-radius: $borderRadius;
+        }
+        .blogger-info {
+          margin-left: 110px;
+          .uname {
+            cursor: pointer;
+            text-align: left;
+            font-size: 16px;
+            color: #1D1D1D;
+          }
+          .tag-list {
+            text-align: left;
+            margin: 14px 0;
+            li {
+              display: inline-block;
+              padding: 0 6px;
+              margin-right: 10px;
+              font-size: 12px;
+              line-height: 24px;
+              color: #999;
+              font-weight: $fontLight;
+              text-align: center;
+              background: #F0F0F0;
+              border-radius: $borderRadius;
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+          .btn-follow {
+            width: 120px;
+            text-align: center;
+            line-height: 28px;
+            font-size: 12px;
+            color: #4887FA;
+            border: 1px solid rgba(0, 0, 0, 0.16);
+            &.follow {
+              color: #B3B3B3;
+            }
+          }
+        }
+        &:hover {
+          transform: translate(0, -20px);
+          border: 1px solid transparent;
+          box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+    .blogger-img-list {
+      @include bloggerImgList();
+      li {
+        cursor: pointer;
+      }
+      &.show {
+        transition: top .5s, height .5s;
+        height: 300px;
+      }
+    }
+  }
+  .blogger-more{
+    margin-top: -10px;
+    text-align: right;
+    padding-right: 5px;
+    a{
+      font-size: 12px;
+      color: #818181;
+    }
+  }
+}

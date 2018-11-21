@@ -1,0 +1,71 @@
+@itemWidth: 288px;
+@itemWidthMargin: 33px;
+@count: 3n;
+
+.minWidth(@column) {
+  @minWidth: @itemWidth * @column + @itemWidthMargin * (@column - 1)
+}
+
+.maxWidth(@column) {
+  @maxWidth: @itemWidth * (@column + 1) + @itemWidthMargin * @column
+}
+
+.actualWidth(@column) {
+  @actualWidth: @itemWidth * (@column - 1) + @itemWidthMargin * (@column - 2)
+}
+
+.pictureCount(@column) {
+  @column2: @column - 1;
+  @pictureCount: ~"@{column2}n"
+}
+
+.layoutContainer(@column) {
+  .minWidth(@column);
+  .maxWidth(@column);
+  .actualWidth(@column);
+  .pictureCount(@column);
+
+  @media (min-width: @minWidth) and (max-width: @maxWidth) {
+    .ant-layout-content {
+      .container {
+        width: @actualWidth;
+      }
+    }
+
+    #recommend-container {
+      .recommend-content {
+        .shop-right {
+          .shop-content {
+            width: @actualWidth;
+            .new-pattern {
+              .new-pattern-img {
+                .shop-pic {
+                  &:nth-child(@{pictureCount}) {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+            .shop-taobao {
+              .shop-taobao-recomment {
+                .shop-taobao-item {
+                  &:nth-child(@{pictureCount}) {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.loop(@column) when (@column >= 3) {
+  .loop(@column - 1);
+  .layoutContainer(@column);
+}
+
+.loop(8);

@@ -1,0 +1,89 @@
+# OSX
+.DS_Store
+ios/Podfile.lock
+package-lock.json
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdataz
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+.vscode/
+android/*/.*
+
+# node.js
+#
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# BUCK
+buck-out/
+\.buckd/
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+*.iml
+.idea/
+.ipr
+.iws
+*~
+~*
+*.diff
+*.patch
+*.bak
+.DS_Store
+Thumbs.db
+.project
+.*proj
+.svn/
+*.swp
+*.swo
+*.log
+node_modules/
+.buildpath
+.settings
+npm-debug.log
+nohup.out
+_site
+dist
+lib
+xcuserdata
+my-release-key.keystore
+.happypack
+ios/Pods
+*.mobileprovision
+
+#egg
+logs/
+run/
+webpack_cache/
+app/public/

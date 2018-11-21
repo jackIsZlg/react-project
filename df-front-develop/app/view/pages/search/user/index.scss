@@ -1,0 +1,34 @@
+@import "../../../common/variable";
+
+.search-page {
+  .search-header {
+    margin: 50px 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    input {
+      display: block;
+      width: 560px;
+      height: 100%;
+      outline: none;
+      background: #FAFAFA;
+      border: 1px solid #B3B3B3;
+      border-radius: $borderRadiusBig 0 0 $borderRadiusBig;
+      border-right: none;
+      padding-left: 25px;
+      font-size: 14px;
+      color: #111111;
+      letter-spacing: 0;
+    }
+    .search-btn {
+      display: block;
+      width: 90px;
+      height: 100%;
+      border-radius: 0 $borderRadiusBig $borderRadiusBig 0;
+      background: #4887FA;
+      font-size: 18px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import "../../common/variable";
+
+#bind-phone-pop-panel {
+  @include popBg();
+  z-index: 1001;
+  .bind-phone-pop-panel {
+    @include centerPop();
+    width: 400px;
+    height: 640px;
+    padding: 47px 50px 48px;
+    background: #FFFFFF;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    .cancel-pop {
+      @include closePop;
+      top: 80px;
+      right: 55px;
+      font-size: 17px;
+    }
+  }
+  .panel-title {
+    margin: 33px auto 86px;
+    font-size: 20px;
+    color: #323232;
+    text-align: left;
+  }
+  .login-input {
+    margin-top: 34px;
+  }
+  .v-code {
+    display: flex;
+    .v-code-input {
+      flex: 1;
+    }
+    .btn-send-v-code {
+      width: 80px;
+      line-height: 38px;
+      margin-left: 10px;
+      color: #777
+    }
+  }
+  .login-footer {
+    position: absolute;
+    width: 300px;
+    left: 50px;
+    bottom: 48px;
+    .bind-tip {
+      font-size: 12px;
+      color: #F3474A;
+      text-align: center;
+      line-height: 15px;
+      margin-bottom: 28px;
+    }
+  }
+  .btn-login {
+    width: 100%;
+    line-height: 40px;
+    font-weight: $fontMedium;
+    color: #FFF;
+    text-align: center;
+    border-radius: $borderRadius;
+    &.default {
+      margin-top: 19px;
+      line-height: 20px;
+      color: #777;
+    }
+    &.green {
+      background: #40BB3A;
+    }
+    &.black {
+      background: #111;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #F0F0F0;
+    border-radius: $borderRadius;
+    border: 1px solid transparent;
+    &::-webkit-input-placeholder {
+      color: #c8c8c8;
+    }
+    &:focus {
+      border: 1px solid #646464;
+    }
+  }
+}

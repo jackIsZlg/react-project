@@ -1,0 +1,56 @@
+@import "../../common/variable";
+
+#download-pop-panel {
+  @include popBg();
+  background: rgba(0, 0, 0, .8);
+  z-index: 1001;
+  .download-pop-panel {
+    @include centerPop();
+    width: 460px;
+    border-radius: $borderRadius;
+    background: #fff;
+  }
+  .cancel-pop {
+    @include closePop();
+  }
+  .download-pop-header {
+    @include popHeader();
+    padding-top: 23px;
+    .download-tip {
+      margin: 10px 0 0;
+      padding: 11px;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .download-pop-content {
+    padding: 19px 21px;
+    overflow: auto;
+    max-height: 400px;
+    li {
+      position: relative;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+      }
+      div {
+        padding: 0 80px 0 50px;
+        line-height: 40px;
+      }
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70px;
+        height: 40px;
+      }
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

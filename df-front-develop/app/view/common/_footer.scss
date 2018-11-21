@@ -1,0 +1,109 @@
+/*
+ 页面底部footer
+ */
+@import "../common/variable";
+// 侧边栏按钮
+#df-side-wrapper {
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  z-index: 9;
+  .btn {
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+    @include squareCenter(46px);
+    font-size: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .3s;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+    z-index: 99;
+    overflow: hidden;
+    .white-text,
+    .red-text {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .white-text {
+      color: #969696;
+      background: #FFFFFF;
+    }
+    .red-text {
+      color: #fff;
+      background: #c94444;
+    }
+    .move-pane {
+      transition: all .3s;
+      background: #fff;
+    }
+    .iconfont {
+      font-size: 12px;
+    }
+    &.show {
+      opacity: 1;
+    }
+    &:hover {
+      .move-pane {
+        transform: translate(0, -46px);
+      }
+    }
+  }
+  // 反馈
+  .btn-to-report {
+    opacity: 1;
+    .iconfont {
+      //font-size: 20px;
+    }
+  }
+  // 置顶
+  .btn-to-top {
+    transition: opacity .3s, transform .5s;
+    transform: translateY(56px);
+    &.show {
+      transform: translateY(0);
+    }
+  }
+}
+
+// 底栏
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 100px;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  //background: #fff;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(0,0,0,0.3);
+  &.black {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    color: rgba(255,255,255,0.3);
+  }
+}
+
+.footer-l {
+  margin-top: 75px;
+}
+
+.footer-l img {
+  vertical-align: top;
+}
+
+.footer-l div {
+  display: inline-block;
+  margin-left: 34px;
+  vertical-align: top;
+}
+
+.footer-l span {
+  display: block;
+  padding-top: 5px;
+  font-size: 14px;
+  color: #B4B4B4;
+  line-height: 16px;
+}

@@ -1,0 +1,32 @@
+.tooltip-inner {
+  padding: 10px 15px;
+  border-radius: $borderRadiusBig;
+  .tip-container {
+    padding: 5px 0;
+    &:after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+    .tip-info {
+      font-size: 18px;
+      color: #111111;
+      span {
+        color: #666666;
+        margin-right: 5px;
+        float: left;
+      }
+      .one-tip {
+        font-size: 16px;
+        display: inline-block;
+      }
+    }
+    .next-step {
+      cursor: pointer;
+      margin-top: 18px;
+      font-size: 14px;
+      color: #48BDF9;
+      float: right;
+    }
+  }
+}

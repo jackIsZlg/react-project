@@ -1,0 +1,166 @@
+/*
+  按钮
+ */
+@import "variable";
+
+.btn-cursor-default {
+  cursor: default;
+}
+
+.btn-effect {
+  position: relative;
+  &:before {
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+    border-radius: $borderRadius;
+  }
+  &:hover:before {
+    background: rgba(255, 255, 255, .2);
+  }
+  &:active:before {
+    background: rgba(0, 0, 0, .1);
+  }
+}
+
+.btn-effect-gray {
+  background: #fff;
+  &:hover {
+    background: #fafafa;
+  }
+}
+
+.btn-font-effect {
+  &:hover {
+    color: rgba(255, 255, 255, .2);
+  }
+  &:active {
+    color: rgba(0, 0, 0, .1);
+  }
+}
+
+.btn-animation {
+  //width: 70px;
+  //text-align: center;
+  //height: 40px;
+  //color: #fff;
+  //font-weight: $fontMedium;
+  //background: #F3474A;
+  //border-radius: $borderRadius;
+  .iconfont {
+    display: inline-block;
+  }
+  &.null {
+    cursor: auto;
+    background: #B4B4B4;
+  }
+  &.loading {
+    cursor: auto;
+    display: inline-block !important;
+    .iconfont {
+      animation: loadingRotate .6s infinite;
+    }
+  }
+  &.success {
+    cursor: auto;
+    display: inline-block !important;
+    .iconfont {
+      opacity: 0;
+      animation: loadingSuccess .8s .3s forwards;
+    }
+  }
+}
+
+.btn-block {
+  width: 80px;
+  height: 40px;
+}
+
+.btn-round {
+  border-radius: $borderRadius;
+}
+
+.btn-round-big {
+  border-radius: $borderRadiusBig;
+}
+
+.btn-default {
+  background: #fff;
+  color: #1D1D1D;
+  border: 1px solid #ddd;
+}
+
+.btn-black {
+  color: #fff;
+  background: #121212;
+}
+
+.btn-grey,
+.btn-disabled {
+  cursor: default;
+  color: #fff;
+  background: #e6e6e6;
+}
+
+.btn-disabled {
+  cursor: inherit;
+
+}
+
+.btn-red {
+  color: #fff;
+  background: #F55;
+}
+
+.btn-blue {
+  color: #fff;
+  background: #4887FA;
+}
+
+.btn-gradient-blue {
+  color: #fff;
+  background: $blueGradient;
+}
+
+.btn-gradient-blue-hover {
+  @include btnGradientBlueHover()
+}
+
+.btn-gradient-deep-blue {
+  color: #fff;
+  background: $deepBlueGradient;
+}
+
+.btn-gradient-deeper-blue {
+  color: #fff;
+  background: $deeperBlueGradient;
+}
+
+.btn-default-red {
+  width: 70px;
+  height: 30px;
+  font-size: 12px;
+  color: #4A4A4A;
+  background: #FFF;
+  border: 1px solid #E6E6E6;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-left: 10px;
+  &:hover {
+    //background: #F3474A;
+    color: #111111;
+    border: 1px solid rgba(17, 17, 17, 0.36);
+  }
+  //&:active {
+  //  background: #E2373A;
+  //  color: #FFF;
+  //  border: 1px solid #E2373A;
+  //}
+}
+
+

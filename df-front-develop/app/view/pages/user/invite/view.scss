@@ -1,0 +1,67 @@
+@import "../../../common/variable";
+
+.invite-content {
+  margin: 0 auto 30px;
+  width: 700px;
+  .invite-title {
+    margin-left: -120px;
+    padding: 35px 0;
+    font-size: 20px;
+    color: #111111;
+    letter-spacing: -0.48px;
+  }
+  .invite-users-content {
+    .no-invite {
+      margin: 110px 0;
+      text-align: center;
+      font-size: 18px;
+      color: #999999;
+      letter-spacing: 0.6px;
+      line-height: 30px;
+      span {
+        color: #000000;
+      }
+    }
+    .invite-item {
+      width: 100%;
+      padding: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      .avatar {
+        width: 60px;
+        height: 60px;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        display: block;
+        float: left;
+      }
+      .invite-user {
+        margin-left: 120px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 14px;
+        color: #C8C8C8;
+        letter-spacing: -0.34px;
+        .invite-nickname {
+          float: left;
+          max-width: 30%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-size: 18px;
+          color: #323232;
+          letter-spacing: 0;
+        }
+        .invite-time {
+          float: right;
+          color: #4A4A4A;
+        }
+        .invite-success {
+          float: right;
+          margin-right: 120px;
+        }
+      }
+    }
+  }
+}

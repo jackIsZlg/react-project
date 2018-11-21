@@ -1,0 +1,63 @@
+@import "../../common/variable";
+
+#avatar-pop-panel {
+  @include popBg;
+  z-index: 100;
+  .close-pop {
+    @include closePop;
+  }
+  .avatar-pop-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 460px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: $borderRadius;
+  }
+  .avatar-pop-header {
+    @include popHeader();
+  }
+  .canvas-pop-content {
+    padding: 30px;
+  }
+  #canvas-avatar {
+    width: 400px;
+    height: 400px;
+  }
+  .btn-edit-list {
+    position: relative;
+    margin-top: 19px;
+    & > button {
+      @include squareCenter(34px);
+      line-height: 32px;
+      margin-right: 10px;
+      opacity: 0.9;
+      background: #FFF;
+      border: 1px solid #E5E5E5;
+      border-radius: $borderRadius;
+    }
+  }
+  .btn-right {
+    position: relative;
+    & > button {
+      width: 80px;
+      height: 34px;
+    }
+  }
+  .btn-select-avatar {
+    margin-right: 10px;
+  }
+  .btn-avatar-left {
+    transform: rotateY(180deg);
+  }
+  #re-upload-avatar {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 40px;
+    opacity: 0;
+  }
+}

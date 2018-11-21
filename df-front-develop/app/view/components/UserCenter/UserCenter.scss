@@ -1,0 +1,343 @@
+@import "../../common/variable";
+
+.user-center-header {
+  padding: 40px 0;
+  overflow: hidden;
+  & > .container {
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar {
+    float: left;
+    @include avatar(150px);
+  }
+  .center-basic-info {
+    float: left;
+    margin-left: 35px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .name {
+      font-size: 20px;
+      color: #111111;
+      display: flex;
+      img{
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .info-row {
+      overflow: hidden;
+      margin: 10px 0 25px;
+      .city, .profession {
+        float: left;
+        font-size: 14px;
+        color: #818181;
+      }
+      .city {
+        margin-right: 25px;
+      }
+    }
+  }
+
+  .btn-set {
+    position: absolute;
+    right: 0;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #FFF;
+    border-radius: 38px;
+    border: solid 1px #e5e5e5;
+    font-size: 14px;
+    color: #4a4a4a;
+    transition: border .2s;
+    &:hover {
+      border: solid 1px #4a4a4a;
+    }
+  }
+
+  //.name {
+  //  margin: 15px 0 5px;
+  //  font-size: 36px;
+  //  color: #111;
+  //}
+
+  //.info-row {
+  //  display: flex;
+  //  justify-content: center;
+  //  margin-top: 24px;
+  //  .city, .profession {
+  //    font-size: 12px;
+  //    color: #999999;
+  //    letter-spacing: -0.29px;
+  //    line-height: 46px;
+  //    margin: 0 12px;
+  //    .iconfont {
+  //      margin-right: 5px;
+  //      font-size: 15px;
+  //      color: #545454;
+  //    }
+  //  }
+  //  .profession {
+  //    color: #818181;
+  //  }
+  //}
+  .user-intro {
+    .intro {
+      margin: 0 auto;
+      width: 596px;
+      font-size: 12px;
+      color: #464646;
+      p {
+        max-width: 100%;
+        display: inline-block;
+        overflow-wrap: break-word;
+        margin: 0 auto;
+        text-align: left;
+      }
+    }
+    a, .no-intro {
+      font-size: 12px;
+      color: #464646;
+      letter-spacing: -0.29px;
+    }
+    a {
+      &:hover {
+        color: #4887FA;
+      }
+    }
+  }
+}
+
+.user-center-nav {
+  background: #fff;
+  padding: 30px 0;
+  ul {
+    overflow: hidden;
+    li {
+      float: left;
+      padding: 0 20px;
+      line-height: 40px;
+      border-radius: 34px;
+      font-size: 16px;
+      &.follow {
+        float: right;
+        margin-left: 20px;
+        border: 1px solid rgba(17, 17, 17, .36);
+        &:hover {
+          color: #111;
+          border: 1px solid rgba(17, 17, 17, .36);
+        }
+      }
+      a {
+        color: #4A4A4A;
+        letter-spacing: -0.39px;
+      }
+      &.current {
+        background-image: linear-gradient(-134deg, #1B1B24 0%, #252543 100%);
+        a {
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+
+// 精选集列表
+.folder-list-content {
+  background: #fff;
+  #file-list {
+    border-top: 1px solid #e5e5e5;
+    &:after{
+      display: block;
+      content: '';
+      clear: both;
+    }
+    .folder-created {
+      &:after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+      .folder-created-header {
+        padding: 20px 0;
+        .btn-default {
+          width: 90px;
+          height: 40px;
+          border-radius: 38px;
+          border: solid 1px #e5e5e5;
+          font-size: 14px;
+          color: #818181;
+          margin-right: 20px;
+          &.selected {
+            transition: all .2s;
+            border: solid 1px #4a4a4a;
+            color: #4a4a4a;
+          }
+        }
+      }
+      .folder-no-result {
+        margin-top: 50px;
+        width: 100%;
+        text-align: center;
+        color: #818181;
+        font-size: 24px;
+        .no-result-tip {
+          font-size: 14px;
+          margin: 20px 0 40px;
+        }
+        .folder-to-recommend {
+          display: inline-block;
+          font-size: 14px;
+          color: #ffffff;
+          width: 150px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          border-radius: 34px;
+          background-image: linear-gradient(135deg,
+                  #1b1b24 0%,
+                  #252543 100%);
+        }
+      }
+      .file-add {
+        .file-cover-new {
+          position: relative;
+          padding: 0;
+          background: #e5e5e5;
+          div {
+            opacity: 0;
+          }
+          .iconfont {
+            position: absolute;
+            @include position-0;
+            margin: auto;
+            display: block;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            font-size: 25px;
+            color: #818181;
+            text-align: center;
+            line-height: 50px;
+          }
+        }
+        .file-footer {
+          .file-name {
+            span {
+              color: #999
+            }
+          }
+        }
+      }
+      .prompt-message {
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        padding: 40px 0;
+        color: gray;
+      }
+    }
+  }
+}
+
+// 精选集操作
+//.folder-operate-wrapper {
+//  height: 60px;
+//  overflow: hidden;
+//  .folder-operate-panel {
+//    width: 100%;
+//    height: 70px;
+//    padding-top: 15px;
+//    .df-logo-icon {
+//      width: 0;
+//      opacity: 0;
+//      color: #000;
+//      transition: all .3s;
+//    }
+//    .btn-share-folder,
+//    .btn-edit-folder,
+//    .btn-set-folder {
+//      width: auto;
+//      padding: 0 20px;
+//    }
+//    .btn-download-folder,
+//    .btn-share-folder {
+//      margin-right: 10px;
+//    }
+//    .btn-edit-folder-list {
+//      display: none;
+//      &.hide {
+//        .btn-need-hide {
+//          position: relative;
+//          &:hover,
+//          &:active {
+//            color: #111;
+//            background: #FFF;
+//            border: 1px solid #E6E6E6;
+//          }
+//          &:after {
+//            content: '';
+//            position: absolute;
+//            top: 0;
+//            left: 0;
+//            width: 100%;
+//            height: 100%;
+//            background: rgba(255, 255, 255, .7);
+//          }
+//        }
+//      }
+//    }
+//    .show-edit-num {
+//      display: none;
+//      line-height: 40px;
+//      color: #777;
+//      #edit-num {
+//        margin: 3px;
+//      }
+//      #select-all {
+//        cursor: pointer;
+//        margin-left: 16px;
+//        color: #323232;
+//        &:hover {
+//          color: #4493D0;
+//        }
+//        &:active {
+//          color: #3F85BC;
+//        }
+//      }
+//    }
+//    &.fixed {
+//      position: fixed;
+//      top: 0;
+//      width: 100vw;
+//      background: #fff;
+//      z-index: 100;
+//      animation: folder-up .3s;
+//      animation-fill-mode: forwards;
+//      .df-logo-icon {
+//        opacity: 1;
+//        margin: 9px 50px 0 0;
+//        width: 96px;
+//      }
+//    }
+//    &.edit {
+//      .btn-edit-folder,
+//      .btn-download-folder,
+//      .btn-set-folder,
+//      .btn-share-folder {
+//        display: none;
+//      }
+//      .btn-edit-folder-list {
+//        display: inline-block;
+//      }
+//      .show-edit-num {
+//        display: block;
+//      }
+//    }
+//  }
+//}

@@ -1,0 +1,340 @@
+@import "../../common/variable";
+
+.classify-wrapper {
+  width: 830px;
+  margin: 64px auto 40px;
+  .classify-list {
+    float: left;
+    font-size: 0;
+    letter-spacing: 0;
+    position: relative;
+    margin-bottom: 22px;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -60px;
+      width: 50px;
+      font-size: 18px;
+      font-weight: $fontMedium;
+      color: #777;
+      text-align: right;
+    }
+    li {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      margin: 0 0 10px 10px;
+      background: url(https://zhiyi-web.oss-cn-hangzhou.aliyuncs.com/static-web/PC-classify.jpg);
+      background-size: 400% 500%;
+      border-radius: $borderRadius;
+      overflow: hidden;
+      vertical-align: top;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .3);
+      }
+      &:hover {
+        a {
+          background: rgba(0, 0, 0, .2);
+        }
+      }
+      &:active {
+        a {
+          background: rgba(0, 0, 0, .3);
+        }
+      }
+      &:nth-child(4n+1) {
+        margin-left: 0;
+      }
+      span {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        font-size: 14px;
+        color: #fff;
+      }
+    }
+  }
+  .classify-list-0 {
+    .classify-item-1 {
+      background-position: -100% 0;
+    }
+    .classify-item-2 {
+      background-position: -200% 0;
+    }
+    .classify-item-3 {
+      background-position: -300% 0;
+    }
+    .classify-item-4 {
+      background-position: 0 -100%;
+    }
+    .classify-item-5 {
+      background-position: -100% -100%;
+    }
+    .classify-item-6 {
+      background-position: -200% -100%;
+    }
+    .classify-item-7 {
+      background-position: -300% -100%;
+    }
+    &:before {
+      content: '上装';
+    }
+  }
+  .classify-list-1 {
+    .classify-item-0 {
+      background-position: 0 -200%;
+    }
+    .classify-item-1 {
+      background-position: -100% -200%;
+    }
+    &:before {
+      content: '上衣';
+    }
+  }
+  .classify-list-2 {
+    margin-left: 220px;
+    .classify-item-0 {
+      background-position: -300% -200%;
+    }
+    &:before {
+      content: '裤子';
+    }
+  }
+  .classify-list-3 {
+    .classify-item-0 {
+      background-position: 0 -300%;
+    }
+    .classify-item-1 {
+      background-position: -100% -300%;
+    }
+    &:before {
+      content: '裙子';
+    }
+  }
+  .classify-list-4 {
+    margin-left: 220px;
+    .classify-item-0 {
+      background-position: -300% -300%;
+    }
+    &:before {
+      content: '鞋子';
+    }
+  }
+  .classify-list-5 {
+    .classify-item-0 {
+      background-position: 0 -400%;
+    }
+    .classify-item-1 {
+      background-position: -100% -400%;
+    }
+    &:before {
+      content: '配饰';
+    }
+  }
+}
+
+.classify-wrapper-new {
+  width: 908px;
+  margin: 64px auto 40px;
+  transition: opacity .3s;
+  .classify-panel {
+    position: relative;
+    margin-bottom: 20px;
+    .classify-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 296px;
+      padding: 6px 0 0 11px;
+      font-size: 48px;
+      color: #DDD;
+      background: #FAFAFA;
+      border-radius: $borderRadius;
+    }
+    .classify-list {
+      display: flex;
+      width: 612px;
+      margin-left: 296px;
+      flex-wrap: wrap;
+      &.classify-list-row-2 {
+        .classify-item {
+          width: 302px;
+        }
+      }
+      &.classify-list-row-3 {
+        .classify-item {
+          width: 200px;
+        }
+      }
+    }
+    .classify-item {
+      position: relative;
+      margin: 0 0 4px 4px;
+      height: 200px;
+      border-radius: $borderRadius;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .3);
+      }
+      &:hover {
+        a {
+          background: rgba(0, 0, 0, .2);
+        }
+      }
+      &:active {
+        a {
+          background: rgba(0, 0, 0, .3);
+        }
+      }
+      span {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-size: 18px;
+        color: #fff;
+      }
+    }
+    .classify-list:last-child {
+      .classify-item {
+        margin: 0 0 0 4px;
+      }
+    }
+  }
+}
+
+.classify-wrapper-third {
+  .banner-classify {
+    height: 450px;
+    padding-top: 40px;
+    background: linear-gradient(-180deg, #FFFFFF 0%, #FBFBFB 100%);
+    ul {
+      display: flex;
+      overflow: hidden;
+      li {
+        //flex: 1;
+        //width: 288px;
+        margin-right: 20px;
+        .banner-img-bg {
+          position: relative;
+          display: block;
+          width: 288px;
+          height: 348px;
+          margin-bottom: 6px;
+          background-color: #777;
+          background-size: cover;
+          background-position: top;
+          overflow: hidden;
+          border-radius: $borderRadius;
+          &:hover:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .1);
+          }
+        }
+        .banner-img-footer {
+          color: #777;
+          .name {
+            display: block;
+            margin: 12px 0 5px;
+            font-size: 14px;
+            color: #777;
+          }
+          &.null {
+            .name {
+              width: 20%;
+              height: 14px;
+              background-color: #777;
+            }
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .classify-title {
+    position: relative;
+    height: 28px;
+    margin: 30px auto;
+    text-align: center;
+    span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: block;
+      width: 328px;
+      font-size: 20px;
+      color: #111111;
+      background: #fff;
+      transform: translateX(-50%);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(0, 0, 0, .08);
+    }
+  }
+  .classify-list {
+    position: relative;
+    padding-top: 20px;
+    .title {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      font-size: 20px;
+      color: #323232;
+    }
+    ul {
+      width: 100%;
+      padding-left: 134px;
+      font-size: 0;
+      letter-spacing: 0;
+    }
+
+    li {
+      display: inline-block;
+      width: 134px;
+      height: 60px;
+      margin: 0 0 20px 20px;
+      border: 1px solid #e9e9e9;
+      border-radius: $borderRadius;
+      background-size: 100%;
+      overflow: hidden;
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 58px;
+        font-size: 14px;
+        color: #4A4A4A;
+        background-color: #fff;
+        &:hover {
+          color: #fff;
+          background: rgba(0, 0, 0, .3);
+        }
+      }
+    }
+  }
+  .classify-list + .classify-list {
+    border-top: 1px solid rgba(0, 0, 0, .06);
+  }
+}

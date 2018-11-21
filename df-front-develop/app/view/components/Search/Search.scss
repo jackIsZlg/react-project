@@ -1,0 +1,180 @@
+@import "../../common/variable";
+
+.search-pane {
+  position: relative;
+  input {
+    width: 0;
+    height: 34px;
+    font-size: 12px;
+    color: #969696;
+    //padding: 0 27px 0 58px;
+    padding: 0 27px 0 15px;
+    line-height: 34px;
+    background: transparent;
+    border-radius: $borderRadiusBig;
+    border: 0;
+    transition: all .3s;
+    &::-webkit-input-placeholder {
+      color: #777;
+    }
+  }
+  .btn-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // color: #969696;
+    height: 100%;
+    line-height: 34px;
+    padding: 0 10px;
+    .iconfont {
+      font-size: 15px;
+    }
+    .new-tip{
+      border-bottom-right-radius: 9px;
+      border-top-left-radius: 9px;
+      height: 15px;
+      background-color: #f55;
+      position: absolute;
+      line-height: 11px;
+      color: #fff;
+      font-size: 10px;
+      text-align: center;
+      padding: 2px 3px;
+      display: inline-block;
+      right: -12px;
+    }
+    .block-tip{
+      position: absolute;
+      left: -18px;
+      margin-top: 10px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 230px;
+      height: 98px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      .arrow-up {
+        display: inline-block;
+        position: absolute;
+        width: 40px;
+        height: 0px;
+        top: 4px;
+        margin: 0 auto;
+        left: 15px;
+        &::after {
+          display: inline-block;
+          content: " ";
+          height: 12px;
+          width: 12px;
+          border-width: 1px 0px 0px 1px;
+          border-style: solid;
+          transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+          transform-origin: center;
+          transition: transform .3s;
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          margin-top: -10px;
+          background-color: #b2b2b2;
+          z-index: 9;
+        }
+      }
+      .block-tip-title{
+          font-size: 14px;
+          color: #ffffff;
+      }
+      .block-tip-btn{
+        font-size: 14px;
+	      color: #ffffff;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 6px;
+        text-align: center;
+        margin-top: 6px;
+        border: solid 1px #ffffff;
+      }
+    }
+  }
+  &.focus {
+    input {
+      background: #fff;
+      color: #000;
+    }
+    .btn-search {
+      color: #777
+    }
+  }
+  &.hover {
+    input {
+      background: #FAFAFA;
+      border: 1px solid #B3B3B3;
+      width: 450px;
+    }
+  }
+  &.ishover{
+    input {
+      background: #FAFAFA;
+      border: 1px solid #B3B3B3;
+      width: 450px;
+    }
+  }
+  &.focus {
+    input {
+      background: #F0F0F0;
+      border: 1px solid #B4B4B4;
+    }
+  }
+
+  // 历史记录
+  .limit-container {
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+    .historyArea {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 4px 10px 0 rgba(0,0,0,.1);
+      z-index: 5;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: all .3s ease-out .1s;
+      .history-item {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 15px;
+        color: #999;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .history-item:hover {
+        background-color: #efefef;
+        color: #111111;
+      }
+      .his-bak {
+        background-color: #efefef;
+        color: #111111;
+      }
+      .clear-history {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background-color: #f4f4f4;
+        text-align: center;
+        color: #cccccc;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        .clear {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

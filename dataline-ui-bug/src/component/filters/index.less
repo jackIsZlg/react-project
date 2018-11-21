@@ -1,0 +1,212 @@
+.filter-wrap{
+  .last-radio-btn-wrap{
+    .ant-radio-button-wrapper:last-child{
+      border-top-right-radius: 4px!important ;
+      border-bottom-right-radius: 4px!important 
+    }
+  }
+  .no-shop-filter{
+    margin: 20px 0;
+  }
+  .filter-select-wrap{
+    display: flex;
+    align-items: center;
+    margin: 10px 0 20px;
+    .filter-type{
+      font-size: 20px;
+      color: #333333;
+      font-weight: 500;
+      margin-right: 20px;
+    }
+  }
+  .filter-type-wrap{
+      display:flex;
+      justify-content: space-between;
+      .keyword-wrap{
+        .ant-input-affix-wrapper{
+          width: 210px;
+        }
+      }
+    .radio-wrap{
+        margin-right: 20px
+    }
+    .add-shop{
+      background-color: transparent;
+      color: #1890ff;
+      height: 36px;
+    }
+    .category-div{
+      margin-left: 20px;
+      margin-right: 10px;
+      font-size: 16px;
+      color: #333333;
+      font-weight: 500;
+    }
+    .shop-radio-wrap{
+        margin-left: 20px;
+        margin-right: -2px;
+    }
+   .change-arrow{
+      transition: all 0.3s;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      border: solid 1px #d9d9d9;
+      &:hover{
+        border: solid 1px #1890ff;
+        color: #1890ff
+      }
+   }
+   .icon-left{
+      border-right: 0!important;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0
+   }
+   .icon-right{
+      border-left: 0!important;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+     
+   }
+   .disabled,
+   .disabled:hover{
+      cursor: not-allowed;
+      color: #d9d9d9;
+      background-color: #ffffff;
+      border: solid 1px #d9d9d9;
+  }
+ }
+  .filter-shop-wrap{
+    border: solid 1px #ebebeb;
+    padding: 10px 40px;
+    margin: 20px 0;
+    border-radius: 4px;
+    .shop-line{
+      display: flex;
+      margin: 10px 0;
+      .filter-shop{
+        height: 30px;
+        line-height: 30px;
+        margin-right: 20px;
+        font-size: 16px;
+        color: #333333;
+        font-weight: 500;
+      }
+      .shop-item-wrap{
+        flex:1
+      }
+      .shop-item-active,
+      .shop-item{
+        transition: all 0.3s;
+        font-size: 14px;
+        color: #333333;
+        cursor: pointer;
+        margin-left: 10px;
+        display: inline-block;
+        width: 88px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 4px;
+        border: solid 1px #fff;
+        &:hover{
+          border: solid 1px #1890ff;
+        }
+      }
+      .shop-item-active{
+        color: #fff;
+        background-color: #1890ff;
+        border: solid 1px #1890ff;
+        border-radius: 4px;
+      }
+      .select-all{
+        width: 60px;
+      }
+    }
+  }
+ .filter-sort-wrap{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    background-color: #fff;
+    margin: 0 -50px;
+    padding: 0 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+    border-top: 10px solid #F7F9FA;
+    .price-input-wrap{
+      display: flex;
+      align-items: center;
+      margin-left: 28px;
+      .price-line{
+        margin: 0 15px;
+      }
+    }
+    .sort-title{
+      font-weight: 500;
+      font-size: 16px;
+      color: #333333;
+      margin-right: 5px;
+    }
+    .sort-item-active,
+    .sort-item{
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 30px;
+      &:hover{
+        color: #1890ff;
+      }
+    }
+    .sort-item-active{
+      color: #1890ff;
+    }
+ }
+  .ant-select-selection--single{
+    height: 36px;
+  }
+  .ant-select-selection__rendered{
+    line-height: 36px;
+  }
+ 
+  .ant-input,
+  .ant-radio-button-wrapper{
+    height: 36px;
+    line-height: 36px;
+  }
+  .ant-input{
+    padding: 0;
+    padding-left: 10px;
+  }
+  .ant-radio-button-wrapper-checked{
+    background-color: #1890ff;
+    color: #fff
+  }
+  .ant-radio-button-wrapper:hover, .ant-radio-button-wrapper-focused{
+    border-color: #1890ff
+  }
+  .days-ago{
+    border-radius: 0 
+  }
+  .ant-calendar-picker-input{
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: center;
+  }
+  .ant-input-lg{
+    height: 36px;
+    border-radius: 0;
+  }
+  .ant-input-number{
+    width: 120px
+  }
+}
+
+.block{
+  margin: 20px -50px;
+  width: calc(~"100% + 100px");
+  height: 10px;
+  background: #F7F9FA;
+}
