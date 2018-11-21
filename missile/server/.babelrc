@@ -1,7 +1,0 @@
-{
-  "plugins": [
-    "transform-async-to-generator"
-  ],
-  "sourceMaps": true,
-  "retainLines": true
-}
