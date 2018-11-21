@@ -1,0 +1,11 @@
+.link {
+  display: block;
+  color: black;
+}
+.link.active {
+  color: red;
+}
+.active {
+  color: red;
+}
+/*# sourceMappingURL=About.css.map */
